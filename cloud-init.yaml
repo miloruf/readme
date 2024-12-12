@@ -1,0 +1,15 @@
+#cloud-config
+users:
+  - name: ubuntu
+    sudo: ALL=(ALL) NOPASSWD:ALL
+    groups: users, admin
+    home: /home/ubuntu
+    shell: /bin/bash
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIcMbw4+24I3Bs2/mHqTH7/bYlb7l/12QG9aRkFizXjH milo.ruf@idirion.com aws-key       
+ssh_pwauth: false
+disable_root: false 
+package_update: true
+packages:
+  - curl 
+  - wget 
