@@ -1,0 +1,11 @@
+#cloud-config
+write_files:
+  - path: /var/www/html/index.html
+    content: |
+      <html><body><h1>Welcome!</h1></body></html>
+packages:
+  - apache2
+  - adminer
+runcmd:
+  - a2enconf adminer
+  - systemctl restart apache2
